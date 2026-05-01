@@ -1,23 +1,16 @@
-<div id="box" >
+<h1 id="result">Name</h1>
+<button onclick="call(event)">John</button>
+<button onclick="call(event)">Hari</button>
+<button onclick="call(event)">Praveen</button>
 
-</div>
-<button onclick="change()">Color change</button>
-<style>
-div{
-    background-color: black;
-    height: 100px;
-    width: 100px;
-}
-</style>
+
 <script>
-var box =document.getElementById("box")
-
-function change()
-{
-    box.style.backgroundColor="red"
-
-}
-
-
+ var h1= document.getElementById("result")
+ 
+ function call(event)
+ {
+   h1.textContent=event.target.textContent
+    
+ }
 
 </script>
