@@ -38,16 +38,12 @@
          <label>E-mail: <input type="email" id="email" required></label>
       </div>
       <div class="group-from1">
-         <label >
-            <button>Save</button>
-         </label>
-
+         <button type="button" onclick="save()">Save</button>
       </div>
    </form>
 
 
-   <table class="box2" border="1" style="border-collapse: collapse";>
-       <div class="group-from2">
+   <table class="box2" id="table" border="1" style="border-collapse: collapse;">
       <thead>
          <tr>
                <th>Name</th>
@@ -65,7 +61,7 @@
             <td>male</td>
             <td>B-phram</td>
             <td>vijibalaij@gmail.com</td>
-            <th><button onclick="Deleteitem(event)">Delete</button></th>
+            <td><button type="button" onclick="deleteRow(this)">Delete</button></td>
          </tr>
       </tbody>
       <tfoot>
@@ -74,15 +70,10 @@
             <td>19</td>
             <td>female</td>
             <td>Bca</td>
-            <td>arulpunitha@gmail.com</td>
-            <th><button onclick="Deleteitem(event)">Delete</button></th>
-
+            <td>arulpuntiha@gmail.com</td>
+            <td><button type="button" onclick="deleteRow(this)">Delete</button></td>
          </tr>
       </tfoot>
-              
-       </div>   
-      
-
    </table>
 </body>
 
