@@ -60,6 +60,7 @@ body{
   top:0;
   left: 0;
   z-index: 1;
+  display: none;
 }
 .popup-create{
   background-color: rebeccapurple;
@@ -68,9 +69,9 @@ body{
   border-radius: 10px;
   position: absolute;
   top: 20px;
-  left: 20px;
+  left: 30%;
   z-index: 2;
-
+  display: none;
 
 }
 .popup-create input{
