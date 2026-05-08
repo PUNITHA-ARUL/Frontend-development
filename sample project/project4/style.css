@@ -1,0 +1,41 @@
+
+*{
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+
+}
+.navbar{
+  background: rgb(58, 58, 198);
+  padding: 10px;
+}
+
+.popup{
+  padding: 10px;
+
+}
+
+.book-popup{
+  padding: 15px;
+  width: 25%;
+  background-color: black;
+  border-radius: 10px;
+  color: white;
+  margin: 30px;
+
+}
+
+.book-popup h2{
+  color:blueviolet;
+
+}
+.book-popup button{
+  background-color: blueviolet;
+  border-radius: 5px;
+  padding: 7px;
+  margin-top: 10px;
+  
+}
