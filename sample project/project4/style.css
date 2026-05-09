@@ -25,7 +25,8 @@ body{
   border-radius: 10px;
   color: white;
   margin: 30px;
-
+  display: inline-block;
+  vertical-align: top;
 }
 
 .book-popup h2{
