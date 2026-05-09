@@ -1,24 +1,25 @@
-
-*{
+* {
   margin: 0;
   padding: 0;
 }
-body{
+
+body {
   font-family: "Open Sans", sans-serif;
   font-optical-sizing: auto;
 
 }
-.navbar{
+
+.navbar {
   background: rgb(58, 58, 198);
   padding: 10px;
 }
 
-.popup{
+.popup {
   padding: 10px;
 
 }
 
-.book-popup{
+.book-popup {
   padding: 15px;
   width: 25%;
   background-color: black;
@@ -29,41 +30,45 @@ body{
   vertical-align: top;
 }
 
-.book-popup h2{
-  color:blueviolet;
+.book-popup h2 {
+  color: blueviolet;
 
 }
-.book-popup button{
+
+.book-popup button {
   background-color: blueviolet;
   border-radius: 5px;
   padding: 7px;
   margin-top: 10px;
 
 }
-.add-button{
-   
-   padding: 14px;
-   color: blueviolet;
-   border-radius: 20px;
-   font-size: 40px;
-   border: none;
-   position: fixed;
-   bottom: 20px;
-   background-color: gray;
-   right: 30px;
+
+.add-button {
+
+  padding: 14px;
+  color: blueviolet;
+  border-radius: 20px;
+  font-size: 40px;
+  border: none;
+  position: fixed;
+  bottom: 20px;
+  background-color: gray;
+  right: 30px;
 }
-.popup-overlay{
+
+.popup-overlay {
   background-color: black;
   opacity: 0.8;
   position: absolute;
   width: 100%;
   height: 100%;
-  top:0;
+  top: 0;
   left: 0;
   z-index: 1;
   display: none;
 }
-.popup-create{
+
+.popup-create {
   background-color: rebeccapurple;
   width: 40%;
   padding: 40px;
@@ -75,32 +80,35 @@ body{
   display: none;
 
 }
-.popup-create input{
+
+.popup-create input {
   background: transparent;
   border: none;
   width: 100%;
   margin: 5px;
   padding: 5px;
   font-size: 20px;
-  border-bottom: solid black 2px ;
+  border-bottom: solid black 2px;
 }
-.popup-create textarea{
+
+.popup-create textarea {
   background: transparent;
   width: 100%;
   margin: 5px;
   padding: 5px;
   font-size: 20px;
-  border: solid black 2px ;
+  border: solid black 2px;
 }
 
-.popup-create input::placeholder{
-  color:black
-}
-.popup-create textarea::placeholder{
-  color:black
+.popup-create input::placeholder {
+  color: black
 }
 
-.popup-create button{
+.popup-create textarea::placeholder {
+  color: black
+}
+
+.popup-create button {
   background-color: blueviolet;
   color: wheat;
   padding: 10px;
@@ -108,10 +116,11 @@ body{
   border-radius: 5px;
 
 }
-.popup-create input:focus{
-  outline: none;
-}
-.popup-create textarea:focus{
+
+.popup-create input:focus {
   outline: none;
 }
 
+.popup-create textarea:focus {
+  outline: none;
+}
