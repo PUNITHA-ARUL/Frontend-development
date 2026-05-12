@@ -1,76 +1,32 @@
-
-
-  <style>
-    .overlay{
-        background-color: black;
-        height: 100%;
-        width: 100%;
-        position: absolute;
-        opacity: 0.5;
-        left: 0;
-        top: 0;
-        z-index: 1;
-        display: none;
-
-    }
-    .popup{
-        z-index: 3;
-       position: absolute;
-        background-color: white;
-        color: black;
-        width: 40%;
-        padding: 20px;
-        left: 30%;
-        border-radius: 30px;
-        display: none;
-    }
-  </style>
-    <button>show</button>
-    <div class="overlay">
-
-    </div>
-    <div class="popup">
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod, nam pariatur. Vero fugiat eius voluptatibus, debitis enim rerum saepe cupiditate.</p>
-        <button>close</button>
-
-    </div>
-
-  <script>
-       var overlay=document.querySelector(".overlay")
-       var popup=document.querySelector(".popup")
-       var showBtn = document.querySelector("button")
-       
-       showBtn.addEventListener("click", function() {
-           overlay.style.display = "block"
-           popup.style.display = "block"
-       })
-       
-       overlay.addEventListener("click", function() {
-           overlay.style.display = "none"
-           popup.style.display = "none"
-       })
-       
-       popup.addEventListener("click", function() {
-           overlay.style.display = "none"
-           popup.style.display = "none"  
-       })
-  </script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
     
 
-
-   <!-- <button id="btn" onclick="call()">show</button>
-
-    <script>
-
-        var button = document.getElementById("btn")
-        button.addEventListener("click", function () {
-            alert("hello");
+    <style>
+        body{
+            background-color: brown;
+            color: aliceblue;
+            letter-spacing: 6px;
+            text-align: center;
+            font-family:Georgia, 'Times New Roman', Times, serif;
         }
-        )
 
-        button.addEventListener("mouseover", function () {
-            alert("Welcome")
-        })
+        .h1tag{
+            font-size: 100px;
+            margin-top: 250px;
+            text-shadow: -6px 6px 0px black;
+            
+        }
+    </style>
 
-    </script>-->
+    <h1 class="h1tag">NETFLEX</h1>
+</body>
+</html>
 
+  
