@@ -1,10 +1,12 @@
 body{
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
+    background-color: gray;
     background-image: url("img.jpg");
-    background-size: cover;
+    background-size: 100%;
     color: white;
     opacity: 0.9;
+    
 
 }
 h1{
@@ -15,4 +17,25 @@ h2{
     font-size: 50px;
     margin-top: 0;
     margin-bottom: 20px;
+}
+#increment-btn{
+    font: 1em sans-serif;
+    border-radius: 10px;
+    padding: 10px 20px 10px 20px;
+    font-size: 30px;
+    background-color: darkgreen;
+    color: wheat;
+    
+}
+
+#save-btn{
+font: 1em sans-serif;
+    border-radius: 10px;
+    padding: 10px 20px 10px 20px;
+    font-size: 30px;
+    background-color:darkred;
+    color: wheat;
+    display: inline-block;
+    margin-left: 200px;
+
 }
