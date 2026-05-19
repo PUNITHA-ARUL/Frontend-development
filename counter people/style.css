@@ -1,41 +1,113 @@
-body{
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #f7f5f2;
+    background: radial-gradient(circle at top left, rgba(255, 255, 255, 0.16), transparent 25%),
+                linear-gradient(145deg, #181818 0%, #2f2d34 100%);
+    background-attachment: fixed;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url("img.jpg") center/cover no-repeat;
+    opacity: 0.12;
+    pointer-events: none;
+}
+
+.app-shell {
+    width: min(540px, 100%);
+    padding: 32px;
+    border-radius: 28px;
+    background: rgba(20, 20, 20, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 28px 80px rgba(0, 0, 0, 0.35);
     text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: gray;
-    background-image: url("img.jpg");
-    background-size: 100%;
-    color: white;
-    opacity: 0.9;
-    
-
-}
-h1{
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-h2{
-    font-size: 50px;
-    margin-top: 0;
-    margin-bottom: 20px;
-}
-#increment-btn{
-    font: 1em sans-serif;
-    border-radius: 10px;
-    padding: 10px 20px 10px 20px;
-    font-size: 30px;
-    background-color: darkgreen;
-    color: wheat;
-    
+    backdrop-filter: blur(18px);
 }
 
-#save-btn{
-font: 1em sans-serif;
-    border-radius: 10px;
-    padding: 10px 20px 10px 20px;
-    font-size: 30px;
-    background-color:darkred;
-    color: wheat;
-    display: inline-block;
-    margin-left: 200px;
+h1 {
+    margin: 0 0 10px;
+    font-size: clamp(2rem, 4vw, 3rem);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #fff;
+}
 
+#counter {
+    margin: 0 0 28px;
+    font-size: clamp(4rem, 8vw, 6rem);
+    letter-spacing: 0.06em;
+    text-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+    margin-bottom: 26px;
+}
+
+button {
+    min-width: 145px;
+    border: none;
+    border-radius: 14px;
+    padding: 14px 24px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform 0.22s ease, box-shadow 0.22s ease, filter 0.22s ease;
+}
+
+button:hover,
+button:focus-visible {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.22);
+}
+
+button:focus-visible {
+    outline: 3px solid rgba(255, 255, 255, 0.35);
+    outline-offset: 4px;
+}
+
+#increment-btn {
+    background: linear-gradient(135deg, #6aca88, #2e7a53);
+    color: #f7f5f2;
+}
+
+#save-btn {
+    background: linear-gradient(135deg, #e66b70, #ad2f37);
+    color: #fff;
+}
+
+.status {
+    font-size: 1rem;
+    color: #d7d2cc;
+    opacity: 0.95;
+    margin: 0;
+}
+
+.status strong {
+    color: #fff;
+}
+
+@media (max-width: 420px) {
+    .app-shell {
+        padding: 24px 18px;
+    }
+
+    button {
+        width: 100%;
+    }
 }

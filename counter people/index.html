@@ -8,12 +8,15 @@
  
 </head>
 <body>
-    <h1>People entered:</h1>
-    <h2 id="counter">0</h2>
-    <button id="increment-btn" onclick="btn()">Increment</button>
-    <button id="save-btn" onclick="save()">Save</button>
-    <script src="script.js">
-    </script>
-    
+    <div class="app-shell">
+        <h1>People entered:</h1>
+        <h2 id="counter">0</h2>
+        <div class="buttons">
+            <button id="increment-btn" onclick="btn()">Increment</button>
+            <button id="save-btn" onclick="save()">Save</button>
+        </div>
+        <p class="status" id="status-text">Ready to track.</p>
+    </div>
+    <script src="script.js"></script>
 </body>
 </html>
