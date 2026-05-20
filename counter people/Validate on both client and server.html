@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>validate</title>
+</head>
+<body>
+    <style>
+
+    </style>
+
+    <form id="form">
+        <input type="text" id="name" placeholder="Username">
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">    
+        <p id="error" style="color: red;"></p>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        const form= document.getElementById('form');
+        const error= document.getElementById('error');
+        form.addEventListener("submit",(e)=>{
+            const name= document.getElementById('name').value.trim();
+            const email= document.getElementById('email').value.trim();
+            const password= document.getElementById('password').value.trim();
+            error.textContent="";
+            if (name === ""){
+                e.preventDefault();
+                error.textContent="Name is required";
+                return;
+            }
+
+            if(password.length < 6){
+                e.preventDefault();
+                error.textContent="Password must be at least 6 Characters";
+                return;
+            
+            }
+        });
+        
+
+    </script>
+</body>
+</html>
