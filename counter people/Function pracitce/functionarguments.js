@@ -36,3 +36,12 @@ function findsum(a,b,c)
 }
 console.log('Here your infinity number', + findsum(300,400,500))
 
+// count the number length
+function findcount()
+{
+    for(i=0; i= arguments.length; i++)
+    {
+        return (i)
+    }
+}
+console.log('Here your infinity number', + findcount(300,400,500))
