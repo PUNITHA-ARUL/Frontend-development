@@ -3,8 +3,17 @@
 
         <script>
             //Arrow function
-            let multiply = x => x*x;
+            //with paentheses
+            let multiply = (x) => x*x;
             console.log('square of 3:' , multiply(3));
+
+            //If a function has only one parameter, you can omit the parentheses:
+            //without parentheses 
+            let multiply2 =(y) => y * y;
+            console.log('square of 4:' , multiply2(4))
+
+            //this keyword
+            let greeting= { name: 'jhon', greet: () => {return this.name;}};
         </script>
     </body>
 </html>
