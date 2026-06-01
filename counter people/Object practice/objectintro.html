@@ -18,6 +18,24 @@
 
              console.log(bike.color)
             console.log(car.type)
+
+            /*dot notation:
+            bike.type;
+            barcket botation:
+            car.color;*/
+
+            //object methods
+            const person= {
+                firstname:'aniruth',
+                lastname:'ravichandran',
+                age:38,
+                fullname: function(){
+                    return this.firstname +" "+ this.lastname;
+                }
+            };
+            console.log(person.fullname())
+
+            
         </script>
     </body>
 </html>
