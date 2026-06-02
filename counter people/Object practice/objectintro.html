@@ -43,8 +43,52 @@
             console.log(person.fullname())
         document.getElementById("demo").innerHTML=person.firstname + " " + person.lastname + " age is " + person.age + ' and his nickname: '+ person.nickname;
             
-           
+           //if check property exists
+           let result= ("nickname" in person);
+           console.log(result)
+        // nested object
+        myobj= {
+            name:'Ramu',
+            age:'20',
+            mycar: {
+                car1:'bmw',
+                car2:'ford',
+                car3:'totyoto'
+            
+            }
+        }
+        //nested object can access by dot or bracket notation
+        console.log(myobj.mycar.car3)
+        console.log(myobj["mycar"]["car2"])
 
+        //object display
+        //for..in loop
+        const shree= {
+            type:'stone',color:'gold',boadercol:'yellow'
+        };
+
+        let text= ""
+        for (let x in shree){
+            text += shree[x] + " ";
+        };
+        console.log(text)
+
+        //object.values()
+        const myarray= Object.values(person)
+        let txt= myarray.toString();
+        console.log(txt);
+
+        //object.entries
+        const furit= {mango:200,orange:300,apple:400};
+
+        let show=""
+        for(let[furits,value] of Object.entries(furit)){
+            show += furit + ": " + value + "<br>";
+        }
+        //object json stringify
+        let json= JSON.stringify(person)
+        console.log(json)
+        console.log(show)
         </script>
     </body>
 </html>
