@@ -86,9 +86,8 @@
             show += furit + ": " + value + "<br>";
         }
         //object json stringify
-        let json= JSON.stringify(person)
+        let json= JSON.stringify(furit)
         console.log(json)
-        console.log(show)
 
         // object constrcutor 
 
@@ -98,10 +97,15 @@
             this.lastname=last,
             this.agenum=age,
             this.eye=eyecolor
-
+            this.fullname= function()
+            {
+                return this.firstname+ " " + this.lastname 
+            };
         };
 
-        
+        let myfather= Person("punitha","arul",19,"black");
+
+        console.log("Myfater is:" + myfather.fullname())
         </script>
     </body>
 </html>
