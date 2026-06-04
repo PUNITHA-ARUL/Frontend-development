@@ -101,11 +101,21 @@
             {
                 return this.firstname+ " " + this.lastname 
             };
-        };
+        }
 
-        let myfather= Person("punitha","arul",19,"black");
+        const myfather=new Person("Arul","Palanisamy",19,"black");
+        //adding property to created object
+        myfather.nationality= "Tamil"
+        //If you want to add the property into object constructor use Prototype
+        console.log("My father is:" + myfather.fullname()+", "+ "Nationality:" + myfather.nationality );
 
-        console.log("Myfater is:" + myfather.fullname())
+        //add a method 
+        myfather.changename= function(name){
+            this.lastname= name;
+        }
+        myfather.changename("Panja Amurtham");
+        console.log("My father last name is: "+ myfather.lastname)
+
         </script>
     </body>
 </html>
