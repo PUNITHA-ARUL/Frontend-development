@@ -1,18 +1,29 @@
 <html>
     <body>
       <h1>Scope</h1>
-      <p>Global scope access from anywhere in your code</p>
-      <p id="demo"></p>
+      <p>Scope access from anywhere in your code</p>
+      <p class="demo"></p>
+      <p class="demo2"></p>
          <script>
-            let xname= "parmid";
-            myfun()
-            function myfun()
+            let xname= "parmid";// Global scope
+            myglo()
+            function myglo()
             {
-                document.getElementById("demo").innerHTML = "I can dispaly " +xname ;
+                document.querySelector(".demo").innerHTML = "I can dispaly name: " +xname ;
             }
+            myfun();
+           function myfun(){
+            let xage= 27;// Function scope
+                document.querySelector(".demo2").innerHTML= "I can display age: "+xage;
+           }
 
-  
-
+           {
+            let x= 2; 
+           }//x can not be used here or outside
+           {
+            var x= 2;
+           }//x can be used here or outside
+           
         </script>
     </body>
 </html>
