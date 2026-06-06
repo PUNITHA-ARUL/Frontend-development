@@ -10,8 +10,12 @@ body {
     font-weight: 400;
     margin-top: 20px;
     box-shadow: 5px 5px 3px rgb(42, 39, 39);
-
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(149, 143, 143);
+    margin: 20px auto;
+    max-width: 900px;
 }
 
 .incard {
@@ -20,25 +24,24 @@ body {
     background-color: rgb(149, 143, 143);
     height: 200px;
     width: 500px;
-    margin-left: 550px;
+    margin: 20px auto;
     box-shadow: 5px 5px 3px rgb(42, 39, 39);
     justify-content: center;
     margin-bottom: 20px;
+    cursor: pointer;
 }
 
 .savecard {
     border: solid 2px black;
-    margin: 50px;
+    margin: 50px auto;
     width: 300px;
-    justify-items: center;
-    position: absolute;
-    margin-left: 650px;
 }
 
 td,
 th {
     border: solid 1px black;
     width: 100px;
+ 
 }
 
 input,
@@ -46,7 +49,7 @@ button {
     border-radius: 5px;
     font-size: 16px;
     margin-top: 20px;
-    background-color: rgb(134, 132, 132);
+    background-color: white;
   
 
 }

@@ -1,7 +1,16 @@
+var name= document.getElementById("name");
+var email= document.getElementById("email");
+var message= document.getElementById("message");
+var submit= document.getElementById("submit");
 
-function myFunction(name, age, grade){
-    console.log("My name is " + name + ", I am " + age + " years old, and I am in grade " + grade + ".");
-}
-myFunction("Alice", 20, 12);
-myFunction("Bob", 22, 11);
-myFunction("Charlie", 19, 10);
+submit.addEventListener("click", function(event){
+    event.preventDefault();
+    if(name.value === "" || email.value === "" || message.value === ""){
+        alert("Please fill in all fields.");
+    } else {
+        alert("Thank you for your message, " + name.value + "!");
+        name.value = "";
+        email.value = "";
+        message.value = "";
+    }
+});
