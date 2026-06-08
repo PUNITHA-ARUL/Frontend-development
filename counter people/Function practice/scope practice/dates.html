@@ -1,0 +1,30 @@
+<html>
+    <body>
+        <h1>new date</h1>
+        <p id="demo"></p>
+        <script>
+            const d= new Date();// local time 
+            document.getElementById("demo").innerHTML=d;
+            // 7 numbers of specify year, month,date, hour, mintue, second, millisecond:
+            const d7= new Date(2007,4,2,9,10,58,0) //you will put month or day as higher than max,it error but add overflow to day
+            console.log(d7)
+
+            //toString()
+            const dtostring= new Date();
+            let text= dtostring.toString();//Automatically converted into string
+            let text2= dtostring.toDateString();//It as more readable format
+            let text3= dtostring.toUTCString();//It as date to string using the UTCS
+            let text4= dtostring.toISOString();//It convert to standard ISOS
+            console.log(text);
+            console.log(text2);
+            console.log(text3);
+            console.log(text4);
+
+            //date formate:
+            
+            let msec= Date.parse("April 02, 2007")
+            console.log(msec)
+
+        </script>
+    </body>
+</html>
