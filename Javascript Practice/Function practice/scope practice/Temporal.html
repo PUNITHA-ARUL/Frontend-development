@@ -1,12 +1,14 @@
 <html>
     <body>
-
+       <p id="demo"></p>
         <script>
             //Temporal is the date and time, it was replace date object
             //Create a Temporal object
-            const day= Temporal.Now.PlainDateISO();
+            const day= Temporal.Now.plainDateISO();
             //Add a duration
-            let dayadd= today.add({days:7})
+            let dayadd= day.add({days:3})
+            
+            document.getElementById("demo").innerHTML= "College reopen date: "+ dayadd.toString()+ " Threedays to go....";
         </script>
     </body>
 </html>
