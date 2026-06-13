@@ -1,0 +1,39 @@
+<html>
+    <body>
+       <p id="demo"></p>
+       <p id="demo2"></p>
+        <script>
+
+            //Array is an  object type designed for, storing the data collection
+            // Array is the heterogeneous, it can store element of different types(string, number, object and other arrays) 
+            const arr1= ["Benz","Toyoto","Ven"]
+            console.log(arr1[1])
+
+            //Accessing the array elements
+            const bike= ["Discovery","Hero","Apache"]
+            let bki= bike[0]
+            console.log(bki)
+
+            //use the tostring() as convert the array to a string of comma seprated array
+            const fruit= ["Apple","Orange", "Mango"]
+            document.getElementById("demo").innerHTML=fruit.toString()
+            
+            //We can use the built-in properties and method
+            //use length, findout length of array
+            console.log(fruit.length)
+
+            //access the last element
+            console.log(fruit[fruit.length-1])
+           
+            //looping in array
+            let frulength= fruit.length
+
+            text= "<ul>"
+                for(i=0; i < frulength; i++){
+                    text += "<li>" + fruit[i] + "</li>"
+                   
+                } text += "</ul>"
+           document.getElementById("demo2").innerHTML=text
+        </script>
+    </body>
+</html>
