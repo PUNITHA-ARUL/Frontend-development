@@ -1,3 +1,11 @@
+<html>
+<body>
+<h1>Backyard Stargazing Event Planner</h1>
+
+<h3>Function planStargazingNight that takes guestCount, snacksPerGuest, and startTime and returns a formatted announcement string for your backyard astronomy event.</h3>
+
+<h4 id="planner"></h4>
+    <script>
 function planStargazingNight(guestCount, snacksPerGuest, startTime) {
     // Write code here
     let total = guestCount;
@@ -7,5 +15,8 @@ function planStargazingNight(guestCount, snacksPerGuest, startTime) {
 
 
 }
- 
-planStargazingNight(1,2,"9:00 PM")
+document.getElementById("planner").innerHTML= planStargazingNight(5,3,"9:00 PM")
+
+</script>
+</body>
+</html>
