@@ -1,39 +1,63 @@
 <html>
-    <body>
-       <p id="demo"></p>
-       <p id="demo2"></p>
-        <script>
 
-            //Array is an  object type designed for, storing the data collection
-            // Array is the heterogeneous, it can store element of different types(string, number, object and other arrays) 
-            const arr1= ["Benz","Toyoto","Ven"]
-            console.log(arr1[1])
+<body>
+    <p id="demo"></p>
+    <p id="demo2"></p>
+    <h3 id="demo3"></h3>
+    <script>
 
-            //Accessing the array elements
-            const bike= ["Discovery","Hero","Apache"]
-            let bki= bike[0]
-            console.log(bki)
+        //Array is an  object type designed for, storing the data collection
+        // Array is the heterogeneous, it can store element of different types(string, number, object and other arrays) 
+        const arr1 = ["Benz", "Toyoto", "Ven"]
+        console.log(arr1[1])
 
-            //use the tostring() as convert the array to a string of comma seprated array
-            const fruit= ["Apple","Orange", "Mango"]
-            document.getElementById("demo").innerHTML=fruit.toString()
-            
-            //We can use the built-in properties and method
-            //use length, findout length of array
-            console.log(fruit.length)
+        //Accessing the array elements
+        const bike = ["Discovery", "Hero", "Apache"]
+        let bki = bike[0]
+        console.log(bki)
 
-            //access the last element
-            console.log(fruit[fruit.length-1])
-           
-            //looping in array
-            let frulength= fruit.length
+        //use the tostring() as convert the array to a string of comma seprated array
+        const fruit = ["Apple", "Orange", "Mango"]
+        document.getElementById("demo").innerHTML = fruit.toString()
 
-            text= "<ul>"
-                for(i=0; i < frulength; i++){
-                    text += "<li>" + fruit[i] + "</li>"
-                   
-                } text += "</ul>"
-           document.getElementById("demo2").innerHTML=text
-        </script>
-    </body>
+        //We can use the built-in properties and method
+        //use length, findout length of array
+        console.log(fruit.length)
+
+        //access the last element
+        console.log(fruit[fruit.length - 1])
+
+        //looping in array
+        let frulength = fruit.length
+
+        text = "<ul>"
+        for (i = 0; i < frulength; i++) {
+            text += "<li>" + fruit[i] + "</li>"
+
+        } text += "</ul>"
+        document.getElementById("demo2").innerHTML = text
+
+        //Nested array and objects
+        let tex = "";
+        const myobject = {
+            name: "Jone",
+            Age: 25,
+            sales: [
+                { name: "gobal", role: ["chief assitatant", "Sales checking", "stock rating"] },
+                { name: "arjun", role: ["manager", "organaizing", "developer"] },
+                { name: "suji", role: ["chief maintain", "solution solving"] }
+            ]
+        }
+
+        for (let i in myobject.sales) {
+            tex += "<h1>" + myobject.sales[i].name + "</h1>";
+            for (let j in myobject.sales[i].role) {
+                tex += "<li>" + myobject.sales[i].role[j] + "</li>" ;
+            }
+        }
+
+      document.getElementById("demo").innerHTML= tex
+    </script>
+</body>
+
 </html>
