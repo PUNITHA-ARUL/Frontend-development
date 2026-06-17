@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet shop</title>
+</head>
+
+<body>
+  
+    <script>
+        has_license = true
+        has_space = false
+        has_experience = true
+        // Calculate conditions
+        let can_sell_regular_pet = (has_license || has_experience) && has_space
+        let can_sell_exotic_pet = !(has_license && has_experience) && has_space
+        let cannot_sell_any_pet = (!has_license && !has_experience) || !has_space
+
+        // Don't delete the lines below
+        console.log("Can sell regular pet:", can_sell_regular_pet)
+        console.log("Can sell exotic pet:", can_sell_exotic_pet)
+        console.log("Cannot sell any pet:", cannot_sell_any_pet)
+    </script>
+</body>
+
+</html>
