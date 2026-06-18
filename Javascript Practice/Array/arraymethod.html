@@ -39,10 +39,18 @@
         //concatenation
         let grp1= ["harini","peerithi","balaji"]
         let grp2= ["hevean","jole","sam"]
-
+        //This method does not change the exsiting array
+        //merging three array (grp1.concat(grp2,grp3))
         let mygrp= grp1.concat(grp2);
         console.log(mygrp)
- 
+
+        //copywithin() copie the array elements as another position
+        let copy= grp1.copyWithin(2,0)
+        console.log(copy) 
+   
+        //flattening()
+        let flat= [[1,2],[3,4],[5,6]];
+        console.log(flat.flat())
       
 
     </script>
