@@ -72,7 +72,7 @@
         console.log(newarr)
         //splice dom
         let splice= ["apple","mango","orange"]
-       
+
  
         document.getElementById("demo1").innerHTML= "Origin splice:<br>" +splice;
         //splice() removed the array without holes
@@ -81,7 +81,13 @@
         let newsplice=splice.splice(1,2,"banana","pappaya")
         document.getElementById("demo2").innerHTML= "New splice:<br>" +splice;
         document.getElementById("demo3").innerHTML= "Removed:<br>" + newsplice;
-
+        
+        //tosplice()
+        //new method creates,new array, without affect the original array
+        let tospl=["one","two","three","four"]
+        let newto=tospl.tospliced(0,2)
+        console.log(newto)
+       
     </script>
 </body>
 
