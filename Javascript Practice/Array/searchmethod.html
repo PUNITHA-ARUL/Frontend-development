@@ -17,6 +17,19 @@
         let position2= fruits.lastIndexOf("apple")+2;
         console.log("Position of fruits: " +position2)
 
+        //include()allows to check for NaN values
+        let position3= fruits.includes("apple")
+        console.log("Apple is include: "+ position3)
+
+        //find()
+        let position4= [2,4,5,6,8]
+        let find= position4.find(myfunction)
+
+        function myfunction(values){
+            return values > 6;
+        }
+        console.log("6 over number is: " + find)
+
     </script>
 </body>
 </html>
