@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+let age = parseInt(inp[0]); // Don't change this line
+let has_adult = inp[1] === "true"; // Don't change this line
+
+// Write your code below
+if (age >= 10) {
+    if (age < 13) {
+        if (has_adult) {
+            console.log("You can enter with adult supervision!");
+        } else {
+            console.log("Sorry, you need an adult with you");
+        }
+    } else {
+        console.log("You can enter by yourself!");
+    }
+} else {
+    console.log("Sorry, you are too young");
+}</script>
+</body>
+</html>
