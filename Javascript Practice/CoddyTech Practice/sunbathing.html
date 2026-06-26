@@ -1,0 +1,31 @@
+<html>
+    <body>
+        <h1>
+            Find sunbathing with temperature and No spiderCount
+        </h1>
+         <h2 id="demo"></h2>
+        <script>
+            function sunbathingSpot(temperature, spiderCount) {
+    // Write code here
+    if(spiderCount >= 3 ){
+        return "Find another spot!"
+    }
+    if(temperature >= 25 && temperature <= 30 && spiderCount === 0 ){
+        return "Perfect spot!";
+    }
+    if(temperature > 30){
+        return "Too hot!";
+    }
+    if(temperature < 25){
+        return "Too cold!"
+    }
+    if(spiderCount == 1 || spiderCount == 2){
+        return "Be cautious!"
+    }
+    
+}
+
+document.getElementById("demo").innerHTML=sunbathingSpot(35,5);
+        </script>
+    </body>
+</html>
