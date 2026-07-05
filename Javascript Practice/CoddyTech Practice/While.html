@@ -18,6 +18,29 @@
             count--;
         }
         while (count > 0)
+
+        //decreaes by 2
+        let count1 = 10;
+
+        // Add your do...while loop below
+        do {
+            console.log(`Counting down: ${count1}`);
+            count1 = count1 - 1;
+            count1--;
+        }
+        while (count1 >= 0);
+
+        //Nested 
+        let n = parseInt(inp); // Don't change this line
+
+        // Write your code below 
+        for (a = 1; a < n; a++) {
+            for (b = 1; b < n; b++) {
+                if (a + b === n) {
+                    console.log(a, b)
+                }
+            }
+        }
     </script>
 </body>
 
