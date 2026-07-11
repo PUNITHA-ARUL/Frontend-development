@@ -53,6 +53,20 @@
             return sum;
         }
         console.log(sum)
+        
+        //simple check username and password
+        const isValid = (username, password) => {
+            if (username === "admin") {
+                return true
+            }
+            if (username === "user" && password === "qweasd") {
+                return true
+            }
+
+            return false;
+
+        }
+        console.log(isValid("user","qweasd"))
     </script>
 </body>
 
