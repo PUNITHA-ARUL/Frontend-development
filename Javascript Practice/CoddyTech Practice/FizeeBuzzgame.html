@@ -1,28 +1,32 @@
-
 <html>
-    <body>
-        <script>
-    let num = parseInt(inp); // Don't change this line
+
+<body>
+    <script>
+        let num = parseInt(inp); // Don't change this line
+        // Type your code below
+        console.log("Welcome to FizzBuzz!");
+        const fizzbuzz = (num) => {
+
+            if (num % 3 == 0 && (num % 7 == 0)) {
+                return "FizzBuzz"
+            }
+            if (num % 3 == 0) {
+                return "Fizz"
+            }
+            if (num % 7 == 0) {
+                return "Buzz"
+            }
+            return num
 
 
-// Type your code below
-console.log("Welcome to FizzBuzz!");
-const fizzbuzz =(int)=>{
-    
-    if(num % 3==0 && (num%  7==0) ){
-        return "FizzBuzz"
-    }
-    if(num  % 3==0){
-        return "Fizz"
-    }
-    if(num % 7==0){
-        return "Buzz"
-    }
-    else{
-         return (num)
-    }
-}
-console.log(fizzbuzz(num))
-</script>
+        }
+        for (i = 1; i <= num; i++) {
+            console.log(fizzbuzz(i))
+        }
+
+
+
+    </script>
 </body>
+
 </html>
