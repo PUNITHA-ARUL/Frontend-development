@@ -10,7 +10,7 @@
 
         }
         console.log(changeElement([1, 3, 4], 2, 9))
-        
+
         //swap the first to last element
         function swapEnds(arr) {
             // Write code here
@@ -21,6 +21,16 @@
             return arr
 
         }
+
+        //change the colors 
+        let colors = ["red", "blue", "green"];
+        colors.push("yellow")
+        let removeColor = colors.shift()
+        colors.unshift("purple")
+        let lastColor = colors.pop()
+        console.log(colors)
+        console.log(removeColor)
+        console.log(lastColor)
     </script>
 </body>
 
