@@ -40,6 +40,22 @@
             }
             return -1
         }
+
+        // process Array
+        function processArray(arr) {
+            // Write code here
+            let remove = arr.pop()
+            arr.push(10)
+            if (arr.includes(5)) {
+                for (let i = 0; i < arr.length; i++) {
+                    if (arr[i] === 5) {
+                        arr[i] = 50
+                    }
+                }
+            }
+            arr.reverse()
+            return arr
+        }
     </script>
 </body>
 
