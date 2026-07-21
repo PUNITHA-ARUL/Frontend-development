@@ -56,6 +56,18 @@
             arr.reverse()
             return arr
         }
+
+        //array interating
+        let arr = inp.split(", "); // Don't change this line
+        // Write your code below
+        let newarr = []
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i].length > 5) {
+                newarr.push(arr[i]);
+            }
+        }
+        console.log(newarr);
+
     </script>
 </body>
 
