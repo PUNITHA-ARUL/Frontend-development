@@ -67,6 +67,18 @@
             }
         }
         console.log(newarr);
+        
+        //ForEach Method
+        let arr1 = inp.split(",").map(Number); // Don't change this line
+
+        // Write your code below
+        let sum = []
+        arr1.forEach(num => {
+            if (num < 50 || num % 5 === 0) {
+                sum.push(num)
+            }
+        });
+        console.log(sum)
 
     </script>
 </body>
