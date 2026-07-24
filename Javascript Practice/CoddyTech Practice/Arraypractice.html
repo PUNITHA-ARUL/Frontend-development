@@ -67,7 +67,7 @@
             }
         }
         console.log(newarr);
-        
+
         //ForEach Method
         let arr1 = inp.split(",").map(Number); // Don't change this line
 
@@ -79,7 +79,20 @@
             }
         });
         console.log(sum)
+        
+        //Vowels 
+        function countVowels(str) {
+            // Write code here
+            let count = 0
+            let vowel = ['a', 'e', 'i', 'o', 'u', 'A', 'O', 'E', 'I', 'U']
 
+            for (let cha of str) {
+                if (vowel.includes(cha)) {
+                    count++;
+                }
+            }
+            return count
+        }
     </script>
 </body>
 
