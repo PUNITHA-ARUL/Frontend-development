@@ -120,6 +120,20 @@
         }
         console.log(count);
 
+        let ipm = inp.split(", ").map(Number);
+        // Write your code below
+
+
+        if (ipm.length % 2 === 0) {
+            let mid = imp.slice(Math.floor(imp.length / 2 - 1), Math.floor(ipm.length / 2 + 1));
+            console.log(mid);
+        }
+        else {
+            let mid = imp.slice(Math.floor(ipm.length / 2 - 1), Math.floor(ipm.length / 2 + 2))
+            console.log(mid);
+
+        }
+
     </script>
 </body>
 
