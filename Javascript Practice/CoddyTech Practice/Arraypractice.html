@@ -79,8 +79,8 @@
             }
         });
         console.log(sum)
-        
-        //Vowels 
+
+        //Identify Vowels 
         function countVowels(str) {
             // Write code here
             let count = 0
@@ -93,6 +93,33 @@
             }
             return count
         }
+
+
+        // Indentify numbers
+        function countDigits(str) {
+            let count = 0
+            let digits = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+
+            for (char of str) {
+                if (digits.includes(char)) {
+                    count++;
+                }
+            }
+            return count++
+
+        }
+
+        //Lowcase and uppercase letter
+        let text = inp;
+        let count = 0
+
+        for (char of text) {
+            if (char.toLowerCase() === 'p') {
+                count++;
+            }
+        }
+        console.log(count);
+
     </script>
 </body>
 
