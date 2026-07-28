@@ -160,6 +160,12 @@
         let filter = numbers1.filter(num => num > 3)
         console.log(filter)
 
+        // Counting 
+        const fruits = ['apple', 'banana', 'apple', 'orange', 'banana', 'apple'];
+        const count1 = fruits.reduce((tally, fruit) => {
+            tally[fruit] = (tally[fruit] || 0) + 1;
+            return tally;
+        }, {});
 
 
     </script>
