@@ -167,7 +167,17 @@
             return tally;
         }, {});
 
+        let ar1 = inp[0].split(", ").map(Number);
+        let ar2 = inp[1].split(", ").map(Number);
+        // Write your code below
 
+        let ar3 = []
+        for (let i = 0; i < ar1.length; i++) {
+            if (!ar2.includes(ar1[i])) {
+                ar3.push(ar1[i])
+            }
+        }
+        console.log(ar3)
     </script>
 </body>
 
