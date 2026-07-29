@@ -166,7 +166,7 @@
             tally[fruit] = (tally[fruit] || 0) + 1;
             return tally;
         }, {});
-
+        //check array1 and array2 if not in same
         let ar1 = inp[0].split(", ").map(Number);
         let ar2 = inp[1].split(", ").map(Number);
         // Write your code below
@@ -178,6 +178,24 @@
             }
         }
         console.log(ar3)
+
+        //Grocery List
+        let ingredients = []
+        function addItem(item) {
+            ingredients.push(item)
+            return item + " added to the grocery list."
+        }
+        function removeItem(item) {
+            if (item.includes("Cheese")) {
+                return item + " is not in the grocery list."
+            }
+            return item + " removed from the grocery list."
+        }
+        console.log(addItem("Milk"))
+        console.log(addItem("Bread"))
+        console.log(addItem("Eggs"))
+        console.log(removeItem("Bread"))
+        console.log(removeItem("Cheese"))
     </script>
 </body>
 
