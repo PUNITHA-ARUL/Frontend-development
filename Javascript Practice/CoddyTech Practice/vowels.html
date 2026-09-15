@@ -1,0 +1,16 @@
+<html>
+    <body>
+        <script>
+            function countUniqueVowels(str) {
+    const vowels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U'];
+    let foundVowels = [];
+    for (let char of str) {
+        if (vowels.includes(char) && !foundVowels.includes(char)) {
+            foundVowels.push(char);
+        }
+    }
+    return foundVowels.length;
+}
+        </script>
+    </body>
+</html>
