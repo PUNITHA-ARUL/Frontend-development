@@ -1,121 +1,165 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
+import { useRef, useState } from 'react'
+import { Music2 } from 'lucide-react'
+import { MyRingtones } from './components/MyRingtones'
+import { PlayerControls } from './components/PlayerControls'
+import { RingtoneExporter } from './components/RingtoneExporter'
+import { SongList } from './components/SongList'
+import { WaveformEditor } from './components/WaveformEditor'
+import { useAudioPlayer } from './hooks/useAudioPlayer'
+import { useRingtoneExport } from './hooks/useRingtoneExport'
+import { useSavedRingtones } from './hooks/useSavedRingtones'
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [songs, setSongs] = useState([])
+  const [currentSongIndex, setCurrentSongIndex] = useState(-1)
+  const containerRef = useRef(null)
+  const currentSong = songs[currentSongIndex] ?? null
+  const audio = useAudioPlayer({ containerRef, currentSong })
+  const { cutAndExport } = useRingtoneExport()
+  const saved = useSavedRingtones()
+
+  const selectSong = (index) => {
+    if (index >= 0 && index < songs.length) setCurrentSongIndex(index)
+  }
+
+  const uploadSongs = (files) => {
+    const uploadedSongs = files.map((file) => {
+      const url = URL.createObjectURL(file)
+      const audioElement = new Audio(url)
+      const song = {
+        id: `${file.name}-${file.lastModified}-${Math.random()}`,
+        name: file.name.replace(/\.[^.]+$/, ''),
+        artist: 'Uploaded Audio',
+        file,
+        url,
+        duration: 0,
+      }
+
+      audioElement.addEventListener('loadedmetadata', () => {
+        setSongs((current) => current.map((item) =>
+          item.id === song.id ? { ...item, duration: audioElement.duration } : item
+        ))
+      }, { once: true })
+
+      return song
+    })
+
+    setSongs((current) => {
+      if (currentSongIndex < 0 && uploadedSongs.length) {
+        setCurrentSongIndex(current.length)
+      }
+      return [...current, ...uploadedSongs]
+    })
+  }
+
+  const deleteSong = (index) => {
+    const song = songs[index]
+    if (song?.url) URL.revokeObjectURL(song.url)
+    setSongs((current) => current.filter((_, songIndex) => songIndex !== index))
+
+    if (index === currentSongIndex) {
+      setCurrentSongIndex(songs.length > 1 ? Math.max(0, index - 1) : -1)
+    } else if (index < currentSongIndex) {
+      setCurrentSongIndex((current) => current - 1)
+    }
+  }
+
+  const moveSong = (direction) => {
+    if (songs.length < 2) return
+    setCurrentSongIndex((current) => (current + direction + songs.length) % songs.length)
+  }
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+    <main className="app-shell">
+      <header className="app-header">
+        <a className="brand" href="#top" aria-label="Ringcraft home">
+          <span className="brand-mark"><Music2 size={19} /></span>
+          <span>ringcraft</span>
+        </a>
+        <span className="header-note">AUDIO WORKSHOP <i /> READY</span>
+      </header>
 
-      <div className="ticks"></div>
+      <div className="workspace" id="top">
+        <section className="editor-column" aria-label="Ringtone editor">
+          <div className="page-heading">
+            <div>
+              <p className="eyebrow">PERSONAL AUDIO STUDIO</p>
+              <h1>Shape your next ringtone.</h1>
+            </div>
+            <span className="format-note">MP3 / WAV</span>
+          </div>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
+          <WaveformEditor
+            containerRef={containerRef}
+            currentSong={currentSong}
+            region={audio.region}
+            duration={audio.duration}
+            isLoading={audio.isLoadingSong}
+            error={audio.audioError}
+            zoom={audio.zoom}
+            onZoomChange={audio.setZoom}
+            onAutoPick={audio.autoPick}
+            onUpdateRegion={audio.updateRegion}
+          />
 
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+          <PlayerControls
+            isPlaying={audio.isPlaying}
+            currentTime={audio.currentTime}
+            duration={audio.duration}
+            volume={audio.volume}
+            isMuted={audio.isMuted}
+            isPreviewingRegion={audio.isPreviewingRegion}
+            isLooping={audio.isLooping}
+            fadeIn={audio.fadeIn}
+            fadeOut={audio.fadeOut}
+            fadeInDuration={audio.fadeInDuration}
+            fadeOutDuration={audio.fadeOutDuration}
+            onPlayPause={audio.playPause}
+            onPreviewRingtone={audio.previewRingtone}
+            onPrevSong={() => moveSong(-1)}
+            onNextSong={() => moveSong(1)}
+            onVolumeChange={audio.setVolume}
+            onToggleMute={audio.toggleMute}
+            onToggleLoop={audio.toggleLoop}
+            onToggleFadeIn={audio.setFadeIn}
+            onToggleFadeOut={audio.setFadeOut}
+            onFadeInDurationChange={audio.setFadeInDuration}
+            onFadeOutDurationChange={audio.setFadeOutDuration}
+          />
+
+          <RingtoneExporter
+            audioBuffer={audio.audioBuffer}
+            currentSong={currentSong}
+            region={audio.region}
+            fadeIn={audio.fadeIn}
+            fadeOut={audio.fadeOut}
+            fadeInDuration={audio.fadeInDuration}
+            fadeOutDuration={audio.fadeOutDuration}
+            onExport={cutAndExport}
+            onSaveToMyRingtones={saved.addRingtone}
+          />
+        </section>
+
+        <aside className="library-column" aria-label="Audio library">
+          <SongList
+            songs={songs}
+            currentSongIndex={currentSongIndex}
+            onSelectSong={selectSong}
+            onUploadSongs={uploadSongs}
+            onDeleteSong={deleteSong}
+          />
+          <MyRingtones
+            ringtones={saved.savedRingtones}
+            playingId={saved.playingId}
+            audioProgress={saved.audioProgress}
+            onTogglePlay={saved.togglePlayRingtone}
+            onDownload={saved.downloadRingtone}
+            onDelete={saved.removeRingtone}
+          />
+        </aside>
+      </div>
+    </main>
   )
 }
 
