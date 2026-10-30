@@ -1,26 +1,31 @@
+<!DOCTYPE html>
 <html>
 <head>
-    <title>Text Decoration</title>
+    <title>Recipe Blog</title>
     <style>
-        /* Write CSS rules here */
-        a{
-            text-decoration: none;
-        }
-        .underline{
-            text-decoration: underline;
-        }
-        p,div{ 
-            text-decoration: underline;
-        }
-        .strike{
-            text-decoration: line-through;
-        
-        }
-
+        /* Write your CSS rules here */
+       a{
+        text-decoration: none;
+       }
+       .section-title{
+        text-decoration: underline;
+       }
+       .crossed-out{
+        text-decoration: line-through;
+       }
     </style>
 </head>
 <body>
-    <p class="underline">This is a paragraph with a <a href="#">link</a>.</p>
-    <div class="strike">This is a division.</div>
+    <h1>My Favorite Recipes</h1>
+    <h2 class="section-title">Chocolate Cake</h2>
+    <p>This delicious <a href="#">chocolate cake recipe</a> is perfect for birthdays.</p>
+    <ul>
+        <li>2 cups flour</li>
+        <li>1 cup sugar</li>
+        <li class="crossed-out">1/2 cup butter</li>
+        <li>1/4 cup milk</li>
+    </ul>
+    <p>You can substitute almond milk if desired.</p>
+    <div>Note: Recipe makes 8 servings.</div>
 </body>
 </html>
